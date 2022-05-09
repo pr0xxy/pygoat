@@ -34,4 +34,4 @@ stages:
     testType: 'app'
     targetFile: 'Dockerfile'
     monitorWhen: 'always'
-    failOnIssues: true
+    failOnIssues: false
