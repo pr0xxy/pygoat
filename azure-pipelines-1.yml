@@ -27,11 +27,11 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-
-- task: SnykSecurityScan@1
-  inputs:
-    serviceConnectionEndpoint: 'snyk'
-    testType: 'app'
-    targetFile: 'Dockerfile'
-    monitorWhen: 'always'
-    failOnIssues: false
+- stage: Scan
+  displayName: Using Snyk to scan for vulnerabilities
+  - task: SnykSecurityScan@1
+    inputs:
+      serviceConnectionEndpoint: 'snyk'
+      testType: 'app'
+      monitorWhen: 'always'
+      failOnIssues: false
