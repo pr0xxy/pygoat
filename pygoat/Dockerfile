@@ -1,4 +1,4 @@
-FROM python:3.10.0rc1-slim-buster
+FROM python:slim-buster
 
 # set up the psycopg2
 # set up the psycopg2
